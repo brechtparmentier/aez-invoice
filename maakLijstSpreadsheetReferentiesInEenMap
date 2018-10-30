@@ -1,0 +1,14 @@
+function list_all_files_inside_one_folder_without_subfolders(){
+  var sh = SpreadsheetApp.getActiveSheet();
+  var folder = DriveApp.getFolderById('1TitimK4SFWzYqOc43D2b6nGgsufrEWis'); // I change the folder ID  here 
+  var list = [];
+  list.push(['Name','ID','Size']);
+  var files = folder.getFiles();
+  while (files.hasNext()){
+    file = files.next();
+    var row = []
+    row.push(file.getName(),file.getId(),file.getSize())
+    list.push(row);
+  }
+   sh.getRange(1,1,list.length,list[0].length).setValues(list);
+}
