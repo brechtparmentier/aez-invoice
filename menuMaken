@@ -1,0 +1,7 @@
+function onOpen() {
+  var ui = SpreadsheetApp.getUi();
+  ui.createMenu('Verkoop Facturen')
+      .addItem('UPDATE EXCEL', 'list_all_files_inside_one_folder_without_subfolders()')
+      .addItem('UPDATE PDF', 'lijstpdfacturen()')
+      .addToUi();
+}
