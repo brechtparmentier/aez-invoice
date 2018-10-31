@@ -1,0 +1,5 @@
+function eerstvolgendeLegeCel() {
+  var spreadsheet = SpreadsheetApp.getActive();
+  spreadsheet.getCurrentCell().getNextDataCell(SpreadsheetApp.Direction.DOWN).activate();
+  spreadsheet.getCurrentCell().offset(1, 0).activate();
+};
