@@ -1,7 +1,22 @@
 function onOpen() {
   var ui = SpreadsheetApp.getUi();
-  ui.createMenu('Verkoop Facturen')
-      .addItem('UPDATE EXCEL', 'list_all_files_inside_one_folder_without_subfolders()')
-      .addItem('UPDATE PDF', 'lijstpdfacturen()')
+  // Or DocumentApp or FormApp.
+  ui.createMenu('Maaltijden')
+      .addItem('kopieer vorige dag', 'kopieerDag')
+      .addItem('ga naar vandaag', 'zoekKolomDatumVandaag')
+      .addItem('verwijder alles', 'verwijderKolom')
+      .addSeparator()
+      .addSubMenu(ui.createMenu('Sub-menu')
+          .addItem('Second item', 'menuItem2'))
       .addToUi();
+}
+
+function menuItem1() {
+  SpreadsheetApp.getUi() // Or DocumentApp or FormApp.
+     .alert('You clicked the first menu item!');
+}
+
+function menuItem2() {
+  SpreadsheetApp.getUi() // Or DocumentApp or FormApp.
+     .alert('You clicked the second menu item!');
 }
